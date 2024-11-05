@@ -1,0 +1,25 @@
+apt update && apt install net-tools && apt install jq
+ to insall docker  curl https://get.docker.com/ | bash
+  to check docker version   docker --version
+   docker version
+    lsns
+     lsns -t pid
+  to watch namespace pids  watch lsns -t pid
+
+to run a container    docker run --name app1 nginx:latest
+  docker ps -a
+to run another container docker run -d --name app2 nginx:latest
+by using this command you will run 10 container : for i in {1..10};do docker run -d nginx:latest; done
+    docker ps
+by using this command you will able to stop all containers docker stop $(docker ps -aq)
+you can remove all containers  docker rm $(docker ps -aq)
+  docker run --rm -d --name app1 nginx:latest
+  docker run --rm -d --name backend -p 8000:80 app1/nginx:latest
+   
+to check docker logs cd /var/lib/docker/containers
+
+cat 25137f4a3d7bd4b6890f0757452477f3df11d9f70d721d873cd02afa9a094822-json.log | jq
+to remove image docker rmi nginx:latest
+
+ Docker log location   cd /var/lib/docker/
+  
