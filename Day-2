@@ -1,0 +1,106 @@
+163  docker version
+  164  docker --version
+  165  clear
+  166  df -h
+  167  lsblk
+  168  fdisk /dev/xvdf
+  169  lsblk
+  170  mkfs.ext4 /dev/xvdf1
+  171  mkdir /dockerdata
+  172  vi /etc/fstab 
+  173  mount -a
+  174  df -h
+  175  cd /d
+  176  cd /dockerdata/
+  177  ll
+  178  for i in {1..10};do
+  179  for i in {1..10}; do echo $(date) > FILE=$i; done
+  180  ls -al
+  181  rm FILE*
+  182  ls -al
+  183  systemctl stop docker.service
+  184  systemctl stop docker.socker
+  185  systemctl stop docker.socket
+  186  vi /lib/systemd/system/docker.service
+  187  sudo rsync -aqxP /var/lib/docker/ /dockerdata
+  188  sudo systemctl daemon-reload && sudo systemctl start docker
+  189  sudo systemctl status docker --no-pager
+  190  df -h
+  191  docker run --rm -d --name app1 kiran23611992/troubleshootingtools:v1
+  192  docker run --rm -d --name app1 kiran2361993/troubleshootingtools:v1
+  193  df -h
+  194  ll
+  195  cd containers/
+  196  ll
+  197  cd a627851b13c7da8b9aaf9659365b4de528df0ca19329a4fe06bc05d785a16d81/
+  198  ll
+  199  cat a627851b13c7da8b9aaf9659365b4de528df0ca19329a4fe06bc05d785a16d81-json.log
+  200  docker network ls
+  201  df -h
+  202  history
+  203  docker images
+  204  docker push 4e2b1ec8f597 veerendranathc/troubleshootingtools
+  205  docker push 4e2b1ec8f597 veerendranathc/troubleshootingtools .
+  206  docker push veerendranathc/troubleshootingtools
+  207  docker push veerendranathc/troubleshootingtools:latest
+  208  ll
+  209  docker images
+  210  docker tag myapplication dockerhubusername/myapplication
+  211  cd 
+  212  docker images
+  213  docker tag app1 veerendranathc/app1
+  214  docker tag troubleshootingtools veerendranathc/troubleshootingtools
+  215  docker tag 4e2b1ec8f597 veerendranathc/troubleshootingtools
+  216  docker images
+  217  docker push veerendranathc/troubleshootingtools
+  218  docker ps -a
+  219  docker inspect app1
+  220  docker inspect app1 | grep -i IPADRESS
+  221  docker inspect app1 | grep -i IPAddress
+  222  docker ps -a
+  223  docker ps
+  224  docker exec -it app1
+  225  docker exec -it app1 bash
+  226  docker run --rm -d --name app2 kiran23611992/troubleshootingtools:v1
+  227  docker run --rm -d --name app1 kiran2361993/troubleshootingtools:v1
+  228  history
+  229  docker run --rm -d --name app1 kiran2361993/troubleshootingtools:v1
+  230  docker run --rm -d --name app1 kiran2361992/troubleshootingtools:v1
+  231  docker run --rm -d --name app2 kiran2361993/troubleshootingtools:v1
+  232  docker ps -a
+  233  docker inspect app1 | grep -i IPAddress
+  234  docker inspect app2 | grep -i IPAddress
+  235  docker exec -it app1 bash
+  236  docker network ls
+  237  docker network create custom --driver bridge
+  238  docker network ls
+  239  docker run -rm -d --name app3 -p 8004:80 --network custom kiran2361993/troubleshootingtools:v1
+  240  docker run --rm -d --name app3 -p 8004:80 --network custom kiran2361993/troubleshootingtools:v1
+  241  docker run --rm -d --name app4 -p 8004:80 --network custom kiran2361993/troubleshootingtools:v1
+  242  docker run --rm -d --name app4 -p 8005:80 --network custom kiran2361993/troubleshootingtools:v1
+  243  docker ps
+  244  docker inspect app3 | grep -i IPAdress
+  245  docker inspect app3 | grep -i IPadress
+  246  docker inspect app3 | grep -i ipadress
+  247  docker inspect app3
+  248  docker inspect app3 | grep -i IPAddress
+  249  docker inspect app4 | grep -i IPAddress
+  250  docker exec -it app3 bash
+  251  docker network connect custom app1
+  252  docker network connect custom app2
+  253  docker network inspect custom
+  254  docker exec -it app3 bash
+  255  docker ps -a
+  256  docker stop $(docker ps -aq)
+  257  docker ps -a
+  258  docker run --rm -d --name node-exporter --network host prom/node-exporter
+  259  docker images
+  260  docker images inspect prom/node-exporter
+  261  docker images inspect prom/node-exporter:latest 
+  262  docker image inspect prom/node-exporter:latest 
+  263  docker nework ls
+  264  docker network ls
+  265  docker stop $(docker ps -aq)
+  266  docker ps -a
+  267  history
+root@ip-172-31-31-210:~# 
