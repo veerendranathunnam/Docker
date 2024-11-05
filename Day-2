@@ -64,7 +64,7 @@ docker ps -a
 docker stop $(docker ps -aq)
 docker ps -a
 
-Using the HOST Network Mode
+###Using the HOST Network Mode###
 The HOST network mode means the container shares the host's IP address. 
 This eliminates the need for port forwarding when running the container.
 For example, when using Prometheus with Node Exporter, it utilizes the host IP for metric collection, making it easier to access the metrics.
